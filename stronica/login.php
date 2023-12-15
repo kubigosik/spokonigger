@@ -11,7 +11,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     if ($username === $valid_username && $password === $valid_password) {
         // Poprawne dane logowania
-        header(Location: ogloszenia.html); // Przekierowanie na stronę ogłoszeń
+        header('Location: ogloszenia.html'); // Przekierowanie na stronę ogłoszeń
         exit();
     } else {
         // Nieprawidłowe dane logowania, możesz obsłużyć błąd tutaj
