@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl1.css">
+    <title>spust(oszenie)</title>
+</head>
+<body>
+  <header>
+    <a href="ogloszenia.html" class="logo">Franek</a>
+    <ul>
+        <li><a href="ogloszenia.html">Strona Główna</a></li>
+        <li><a href="kliker.html">kliker</a></li>
+        <li><a href="drejk.html">Drake</a></li>
+        <li><a href="https://youtu.be/dRP4FTUSS1I?si=ObzXR_QKS0mG_bZB"> Piosenka gorąca linia bling</a></li>
+        
+    </ul>
+    
+  </header>
+  <section class="banner"></section>
+
+<script>
+    window.addEventListener("scroll", function(){
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    })
+</script>
+</body>
+</html>

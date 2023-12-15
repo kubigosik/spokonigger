@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>gra kliker Drake</title>
+  <style>
+ 
+    #counter {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    #clickButton {
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    #clickButton img {
+      width: 200px;
+    }
+    .upgrade-btn {
+      margin: 10px;
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>gra kliker drake</h1>
+  
+  <p id="counter">0</p>
+  <button id="clickButton">
+    <img src="https://via.placeholder.com/200" alt="Drake Image">
+  </button>
+
+  <div id="upgradeButtons">
+    <button class="upgrade-btn" onclick="buyUpgrade(2, 100, this)">Upgrade x2 (Cost: 100)</button>
+    <button class="upgrade-btn" onclick="buyUpgrade(1.5, 200, this)">Upgrade x3 (Cost: 200)</button>
+    <button class="upgrade-btn" onclick="buyUpgrade(1.33, 500, this)">Upgrade x6 (Cost: 500)</button>
+    <button class="upgrade-btn" onclick="buyUpgrade(10, 50, this)">Upgrade x (Cost: 50)</button>
+    <button class="upgrade-btn" onclick="buyUpgrade(20, 100, this)">Upgrade x20 (Cost: 100)</button>
+    <button class="upgrade-btn" onclick="buyUpgrade(50, 200, this)">Upgrade x50 (Cost: 200)</button>
+  </div>
+
+  <script>
+    let count = 0;
+    let multiplier = 1;
+
+    document.getElementById('clickButton').addEventListener('click', function() {
+      count += multiplier;
+      document.getElementById('counter').textContent = count;
+    });
+
+    function buyUpgrade(value, cost, button) {
+      if (count >= cost) {
+        count -= cost;
+        multiplier += value;
+        document.getElementById('counter').textContent = count;
+        button.style.display = "none"; // Hide the purchased button
+
+        // Show remaining buttons
+        const remainingButtons = document.querySelectorAll('.upgrade-btn:not([style="display: none;"])');
+        if (remainingButtons.length === 0) {
+          document.getElementById('upgradeButtons').innerHTML = "<p>All upgrades purchased!</p>";
+        }
+      } else {
+        alert("Not enough points to buy this upgrade!");
+      }
+    }
+  </script>
+</body>
+</html>
