@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl1.css">
+    
+    <title>spust(oszenie)</title>
+</head>
+<body>
+  <header>
+    <a href="ogloszenia.html" class="logo">franye</a>
+ 
+    <ul>
+        <li><a href="ogloszenia.html">Strona Główna</a></li>
+        <li><a href="#"><s>kliker</s></a></li>
+        <li><a href="drejk.html">Drake</a></li>
+        <li><a href="https://youtu.be/dRP4FTUSS1I?si=ObzXR_QKS0mG_bZB"> Piosenka gorąca linia bling</a></li>
+        
+        
+    </ul>
+    
+  </header>
+  <section class="banner"></section>
+
+<script>
+    window.addEventListener("scroll", function(){
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    })
+</script>
+<form>
+  <div id="tekst">
+    <section class="srodek"><center><table>
+      <thead>
+        
+        <th>Tworca</th>
+        <th>Album</th>
+        <th>Cena</th>
+      
+    </thead>
+      <tbody>
+        <tr>
+          <td>Drake</td>
+          <td>Scorpion</td>
+          <td>60 zł <input type="checkbox" id="scor"></td>
+        </tr>
+        <tr>
+          <td>Drake</td>
+          <td>Take Care</td>
+          <td>50 zł <input type="checkbox" id="tc"></td>
+        </tr>
+        <tr>
+          <td>Travis Scott</td>
+          <td>Astroworld</td>
+          <td>75 zł <input type="checkbox" id="astr"></td>
+        </tr>
+        <tr>
+          <td>Travis Scott</td>
+          <td>Birds in the Trap Sing Mcknight</td>
+          <td>65 zł <input type="checkbox" id="bitt"></td>
+        </tr>
+        <tr>
+          <td>Gunna</td>
+          <td>Drip or Drown 2</td>
+          <td><s>65 zł</s> <b>45.99 zł</b> <input type="checkbox" id="dod"></td>
+        </tr>
+        <tr>
+          <td>Gunna</td>
+          <td>Wunna</td>
+          <td>55.50 zł <input type="checkbox" id="wun"></td>
+        </tr>
+        <tr>
+          <td>Kanye West</td>
+          <td>My Beautiful Dark Twisted Fantasy</td>
+          <td><s>41 zł</s> <b>35 zł</b> <input type="checkbox" id="mbd"></td>
+        </tr>
+        <tr>
+          <td>Kanye West</td>
+          <td>Yeezus</td>
+          <td>74 zł <input type="checkbox" id="yee"></td>
+        </tr>
+        <tr>
+          <td>Kanye West</td>
+          <td>The Life of Pablo</td>
+          <td>70 zł <input type="checkbox" id="tlop"></td>
+        </tr>
+        <tr>
+          <td>Kanye West</td>
+          <td>Graduation</td>
+          <td>46.50 zł <input type="checkbox" id="grad"></td>
+        </tr>
+      </tbody>
+    </table></center><br>
+    <section class="informacja">*Zaznacz przycisk koło ceny aby wybrać przedmiot który chcesz zakupić</section>
+  </section><br>
+<section class="lewy">
+  
+</section>
+
+  <input type="radio" id="tak" name="dostawa" checked> dostawa (11zł)<br>
+  <input type="radio" id="nie" name="dostawa" > bez dostawy<br><br>
+  
+  <button class="gradient-btn"  onclick="damian(event)">złóż zamówienie</button>
+
+  <p id="cena"></p>
+</form>
+<script>
+function damian(event){
+  event.preventDefault();
+  var cena = 0;
+  var scor = document.getElementById('scor').checked;
+  var tc = document.getElementById('tc').checked;
+  var astr = document.getElementById('astr').checked;
+  var bitt = document.getElementById('bitt').checked;
+  var dod = document.getElementById('dod').checked;
+  var wun = document.getElementById('wun').checked;
+  var mbd = document.getElementById('mbd').checked;
+  var yee = document.getElementById('yee').checked;
+  var tlop = document.getElementById('tlop').checked;
+  var grad = document.getElementById('grad').checked;
+
+  var tak = document.getElementById('tak').checked;
+  var nie = document.getElementById('nie').checked;
+
+
+if(scor==true){
+  cena=cena+60
+}
+if(tc==true){
+  cena=cena+50
+}
+if(astr==true){
+  cena=cena+75
+}
+if(bitt==true){
+  cena=cena+65
+}
+if(dod==true){
+  cena=cena+45.99
+}
+if(wun==true){
+  cena=cena+55.50
+}
+if(mbd==true){
+  cena=cena+35
+}
+if(yee==true){
+  cena=cena+74
+}
+if(tlop==true){
+  cena=cena+70
+}
+if(grad==true){
+  cena=cena+46.50
+}
+if(tak==true & grad==false & tlop==false & yee==false & mbd==false & wun==false & dod==false & 
+bitt==false & astr==false & tc==false & scor==false  ){
+  
+  let imie = prompt("podj imie");
+
+if (imie != null) {
+  alert(imie+" ty czarnuchu nie da sie zamowic samego zamówienia")
+}
+
+}
+else if(tak==true & (grad==true || tlop==true || yee==true || mbd==true || wun==true || dod==true ||
+bitt==true || astr==true || tc==true || scor==true)){
+  cena+=11
+}
+
+
+document.getElementById("cena").innerHTML=("cena twojego zamówienia wynosi: "+cena.toFixed(2)+" zł");
+}
+    
+  
+</script>
+
+
+</section>
+<section class="prawy"></section>
+
+  </div>
+ 
+</body>
+</html>

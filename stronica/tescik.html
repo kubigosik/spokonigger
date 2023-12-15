@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script> 
+    
+        function czas(){
+
+            
+       let data= new Date();
+       let dzien= (data.getDate());     
+       let miesiac = (data.getMonth());
+       let rok = (data.getFullYear())
+       
+       let datar= (" DATA "+dzien+"/"+miesiac+"/"+rok );
+
+       let godzina = (data.getHours());
+       let minuty = (data.getMinutes());
+       let sekundy = (data.getSeconds())
+       
+       let datag = (" GODZINA "+godzina+":"+minuty+":"+sekundy)
+        let czaas = [datar, datag]
+       document.write(czaas)
+       setTimeout("location.reload()",990)
+       
+        }
+        setInterval(czas(), 1000);
+        
+    </script>
+
+</body>
+</html>
